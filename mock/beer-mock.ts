@@ -1,4 +1,4 @@
-import {Beer} from "../src/app/beer";
+import { Beer } from "./beer";
 
 export const BEERS: Beer[] = [
   {
