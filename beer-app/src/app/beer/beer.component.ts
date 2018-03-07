@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { Beer } from '../beer';
+
 
 @Component({
   selector: 'app-beer',
@@ -10,8 +11,15 @@ export class BeerComponent implements OnInit {
 
   @Input() beer: Beer;
 
+  @Output()
+  addBeerEvent: EventEmitter<Beer> = new EventEmitter<Beer>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onAddBeer(){
+    this.addBeerEvent.emit(this.beer);
   }
 }
