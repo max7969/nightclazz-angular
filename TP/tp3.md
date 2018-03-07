@@ -1,5 +1,13 @@
 ## PW3 - Boucles et conditions
 
+* Créez l'interface Beer en utilisant Angular CLI. Une bière est définie par un label, une description, une image (chemin relatif), un prix et un stock.
+
+```shell
+$ ng generate interface beer
+```
+
+* Ajoutez un attribut beer dans votre component beer.component qui implémente cette nouvelle interface. Décorez le de façon à en faire une input.
+
 Dans ce TP, nous allons dynamiser notre page avec `map` et `if`.
 
 * Grâce à `map`, itérez sur la liste des bières afin d'afficher autant de composants `Beer.jsx` qu'il y a d'éléments dans le tableau.
