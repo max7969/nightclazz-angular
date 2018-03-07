@@ -10,15 +10,12 @@ Nous allons à présent créer nos premiers composants. Le premier sera utilisé
 
 * Videz le contenu des fichiers `index.html` et `app.component.html` et remplacez le par le contenu des fichiers exemple `maquettes/app.component.html` `maquttes/index.html`.
 
-* Créez un nouveau composant `Menu` à l'aide de Angular CLI. Ce composant sera le menu principal de l'application. Ce composant possèdera un paramètre, un tableau de produits (le panier de l'utilisateur). Ce tableau sera utilisé pour calculer le prix total du panier.
+* Créez un nouveau composant `Menu` à l'aide de Angular CLI. Ce composant sera le menu principal de l'application. 
 
-* Intégrez dans votre app.component.html votre nouveau composant Menu.
+```shell
+$ ng generate component menu
+```
 
-* Dans le composant principal, instanciez un nouveau tableau d'objets, correspondant aux items que nous désirons afficher. Vous pouvez récupérer le contenu du fichier `server/beers.json`
+* Intégrez dans votre app.component.html votre nouveau composant Menu en utilisant le selector. 
 
-* Nous allons à présent créer un composant `Beer.jsx` qui sera en charge d'afficher le détail d'un élément du tableau précédement créé. Voici les prérequis pour ce composant :
-    * Il utilisera le template pour l'instant présent dans le composant principal
-    * Il possèdera un paramètre, correspondant à l'élément à afficher
-    * Il émettra un événement lorsque nous cliquons sur le bouton
-
-* Lorsque le composant principal reçoit cet événement, il devra mettre à jour le panier de l'utilisateur (utilisé précédemment lors de l'utilisation du composant `Menu.jsx`).
+* De la même façon créer un second component `Beer` et intégrer le dans l'app.component.
