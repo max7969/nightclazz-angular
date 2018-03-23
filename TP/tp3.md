@@ -1,4 +1,4 @@
-## PW3 - Boucles et conditions
+## PW3 - Templating
 
 * Créez l'interface Beer en utilisant Angular CLI. Une bière est définie par un label, une description, une image (chemin relatif), un prix et un stock.
 
