@@ -1,4 +1,4 @@
-## PW4 - Les fonctions pures
+## PW4 - Evènements
 
 Nous allons à présent créer un panier et permettre l'ajout de bière à ce dernier.
 
