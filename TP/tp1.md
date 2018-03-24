@@ -9,7 +9,6 @@ Pour cela nous allons nous servir de l'outil en ligne de commande officiel : **a
 # Installer angular-cli
 $ npm install -g @angular/cli
 
-# Recommendé si vous avez la dernière version de node / npm
 $ ng new beer-app
 $ cd beer-app
 ```
