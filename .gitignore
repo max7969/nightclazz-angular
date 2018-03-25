@@ -21,3 +21,6 @@
 
 # IntelliJ
 out/
+
+beer-app/node_modules
+server/node_modules
