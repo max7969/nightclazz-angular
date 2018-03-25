@@ -1,15 +1,17 @@
 ## PW7 - Le routing
 
-Nous allons maintenant créer une nouvelle page afin de visualiser et confirmer le panier.
-Pour ce faire, nous allons avoir besoin de créer un module de routing.
+Nous allons maintenant gérer la navigation dans l'application afin de passer de la page listant les bières disponibles à une page affichant le panier pour le valider.
+
+Pour cela il nous faut utiliser le module de **Routing** d'Angular.
 
 ### Un peu de ménage
 
 Avant toute chose, nous allons partir de la branche `step7` du repo git.
 Dans cette version, nous avons légèrement modifié la structure de l'application :
-* L'ancien composant AppComponent devient ProductsComponent
-* Un nouveau AppComponent a été crée qui ne contient plus que le footer pour le moment
-* Il est normal que l'application n'affiche plus rien pour le moment.
+* L'ancien composant `AppComponent` devient `ProductsComponent`
+* Un nouveau `AppComponent` a été crée qui ne contient plus que le footer pour le moment
+* Un nouveau composant a été crée : `BasketComponent`, pour afficher le contenu du panier
+* Il est normal que l'application n'affiche plus rien.
 
 
 ### Le module de Routing
@@ -20,7 +22,7 @@ $ ng generate module app-routing --flat --module=app
 ```
 Ici le flag __--flat__ indique que l'on ne veut pas un dossier séparé pour le module, mais plutôt qu'il soit mis a la racine du projet. Le flag __--module=app__ indique que ce nouveau module doit être importé dans `app.module.ts`.
 
-Contrairement au module **AppModule**, **AppRoutingModule** n'aura pas besoin de déclarer des components, vous pouvez donc supprimer la ligne `declarations: []` ainsi que l'import de `CommonModule`, nous n'en aurons pas besoin.
+Contrairement au module **AppModule**, **AppRoutingModule** n'aura pas besoin de déclarer des components, vous pouvez donc supprimer la ligne `declarations: []` ainsi que l'import de `CommonModule`.
 
 Notre AppRoutingModule va configurer des `Routes` que l'on fournira au `RouterModule` d'Angular, importez ces éléments :
 ```Javascript
@@ -44,7 +46,7 @@ const routes: Routes = [
 ```
 ( Le type `Routes` correspond a un objet qui est en fait un `Route[]` ).
 
-La dernière route est la route par défaut : elle spécifie que si une URl correspond strictement a `''` (rien en l'occurence), alors on redirige vers la route _products_
+La dernière route est la route par défaut : elle spécifie que si une URL correspond strictement a `''` (rien en l'occurrence), alors on redirige vers la route _products_
 
 Il nous faut maintenant fournir ces Routes au `RouterModule` d'angular. Pour cela il faut l'ajouter dans le tableau  `NgModule.imports` et lui passer l'objet `routes` via la méthode `forRoot()` :
 ```javascript
@@ -52,7 +54,7 @@ imports: [ RouterModule.forRoot(routes) ],
 ```
 
 Dernier point!
-Pour que les autres composants de notre application puissent naviger d'une route a l'autre, il faut que notre `AppRoutingModule` exporte `RouterModule` :
+Pour que les autres composants de notre application puissent naviguer d'une route a l'autre, il faut que notre `AppRoutingModule` exporte `RouterModule` :
 
 
 ```Javascript
@@ -67,7 +69,7 @@ __Récapitulatif__ : parce que ça fait beaucoup d'instructions d'un coup. Voici
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {BasketComponent} from "./basket/basket.component";
-import {AppComponent} from "./app.component";
+import {ProductsComponent} from "./products/products.component";
 
 const routes: Routes = [
 { path: 'products', component: ProductsComponent },
@@ -90,6 +92,6 @@ export class AppRoutingModule {
 ### Modifier le AppComponent
 
 Dire a Angular quel Component afficher pour quelle URL, c'est bien, mais il a besoin de savoir où les inclure :
-c'est le role de la directive `<router-outlet></router-outlet>`.
+c'est le rôle de la directive `<router-outlet></router-outlet>`.
 
-Insérez-la dans `app.component.html` a l'endroit ou vous avez supprimé la ligne `<app-beer></app-beer>`.
+Insérez-la dans `app.component.html` a l'emplacement indiqué par un commentaire.
