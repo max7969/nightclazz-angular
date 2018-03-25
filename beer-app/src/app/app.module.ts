@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BeerComponent } from './beer/beer.component';
 import { BeerService } from './beer.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {BasketService} from "./basket.service";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    BeerService
+    BeerService,
+    BasketService
   ],
   bootstrap: [AppComponent]
 })
