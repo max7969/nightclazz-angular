@@ -1,15 +1,19 @@
-## PW6 - Le Routeur
+## PW6 - Le service basket
+Nous allons créer un 2eme service pour la gestion du panier.
 
-Nous allons à présent intégrer dans notre application le routeur proposé par la communauté **React**
+Crér un service **Basket** via ng-cli :
+```shell
+$ ng generate service Basket --module app
+```
+Notez l'utilisation de l'argument __--module app__ qui va ajouter le service à la liste des **providers** du module **App** pour nous.
 
-* Installez le module `react-router-dom`
+Le service **Basket** a 2 méthodes :
+* __getBasket()__, qui envoie une requête GET sur `http://localhost:1337/api/v1/basket` et obtient le panier de
+l'utilisateur (un tableau de bières vide au départ)
+* __updateBasket(Beer)__ qui envoie une requête POST sur la même adresse, avec une bière dans le body de la requête pour ajouter une bière au panier.
+Le serveur répondra avec le nouveau panier mis à jour si la bière est en stock, ou avec une erreur 500 s'il n'y en a plus.
 
-* Créez deux composants : `home` et `basket`
-  * le composant `home` aura la charge d'afficher le contenu de la page que nous avons implémenté dans les PWs précédents
-  * le composant `basket` qui doit afficher, pour l'instant, le contenu du panier de l'utilisateur
+Par défaut les méthodes `http.get()` et `http.post()` ont un retour de type Object. Vous pouvez spécifier le
+type de retour comme ceci : `http.get<Beer[]>( )`.
 
-* Ajoutez à votre application la configuration nécessaire pour le fonctionnement du routeur.
-
-* Dans le template du composant `App`, indiquez le point d'insertion des différentes pages de l'application à l'aide du composant `HashRouter` et les routes à utiliser à l'aide du composant `Route`.
-
-* Ajoutez le composant `NavLink` dans le composant `menu` afin de rediriger l'utilisateur vers les deux composants que nous venons de créer.
+Pensez à typer le retour de ces méthodes avec un `Observable<Beer[]>`.
