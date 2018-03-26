@@ -22,7 +22,7 @@ Vous pouvez dès à présent vérifier que l'application fonctionne sur http://l
 
 ## Utiliser les maquettes
 
-Vous êtes à présent prêt pour intégrer le template dans l'application qui vient d'être générée. Nous allons nous limiter pour l'instant à la page principale. Voici les prérequis :
+Vous êtes à présent prêt pour intégrer le template dans l'application qui vient d'être générée. Nous allons nous limiter pour l'instant à la page principale. Voici les pré-requis :
 
 * Remplacez le fichier `styles.css` par celui présent dans `maquettes/styles.css`. C'est le thème global de l'application.
 * Remplacez le contenu `index.html` par celui du fichier `maquettes/index.html` : il s'agit de tous les éléments à l'exterieur de `<body>`.
