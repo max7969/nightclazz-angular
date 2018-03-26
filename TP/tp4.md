@@ -1,6 +1,6 @@
 ## PW4 - Evènements
 
-Nous allons à présent créer un panier et permettre l'ajout de bière à ce dernier.
+Nous allons à présent créer un panier et permettre l'ajout de bières à ce dernier.
 
 * Ajoutez une fonction sur le beer component qui sera appelée au clic sur le bouton "Ajouter". Vous pouvez mettre un simple alert pour tester.
 
@@ -28,6 +28,6 @@ N'oubliez pas de mettre $event en paramètre pour récupérer le payload. Vérif
 
 Pour terminer, nous allons mettre à jour l'affichage du panier dans le menu component.
 
-* Ajoutez un input dans votre menu component pour représenter le panier. N'oubliez de transmettre votre panier depuis le template de app component.
+* Ajoutez un input dans votre menu component pour représenter le panier. N'oubliez pas de transmettre votre panier depuis le template de app component.
 
 * Créez une méthode qui calcule le total du panier. Puis modifiez le template du menu pour faire apparaitre le nombre d'items et la somme.
