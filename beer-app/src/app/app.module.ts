@@ -8,13 +8,17 @@ import { BeerComponent } from './beer/beer.component';
 import { BeerService } from './beer.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {BasketService} from "./basket.service";
+import { BasketComponent } from './basket/basket.component';
+import { ProductsComponent } from './products/products.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    BeerComponent
+    BeerComponent,
+    BasketComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
