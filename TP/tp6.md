@@ -1,7 +1,7 @@
 ## PW6 - Le service basket
 Nous allons créer un 2eme service pour la gestion du panier.
 
-Crér un service **Basket** via ng-cli :
+* Créez un service **Basket** via ng-cli :
 ```shell
 $ ng generate service Basket --module app
 ```
