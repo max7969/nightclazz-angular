@@ -8,7 +8,7 @@ $ ng generate interface beer
 
 * Ajoutez un attribut beer dans votre component beer.component qui implémente cette nouvelle interface. Décorez le de façon à en faire une input.
 
-* Modifiez le template du beer.component de façon à afficher les propriétés de la bière. Vous pouvez utilisez une base de template disponible dans le dossier maquette.
+* Modifiez le template du beer.component de façon à afficher les propriétés de la bière. Vous pouvez utilisez une base de template disponible dans le dossier maquette. Copiez aussi le dossier `images` dans le dossier `assets` de votre projet pour les mettre à disposition de votre application.
 
 * Récupérez le fichier `mock/beer-mock.ts` et déposez le à la racine de votre projet. Ce fichier défini une constante BEERS qui est un tableau contenant des exemples de bières.
 
