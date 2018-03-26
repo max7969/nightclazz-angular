@@ -16,17 +16,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let produit of basket">
-              <td>{{produit.label}}</td>
-              <td>{{produit.price | currency}}</td>
-              <td>1</td>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td><strong>Total :</strong></td>
-              <td><strong>{{calculerTotal() | currency}}</strong></td>
-              <td><strong>{{basket.length}}</strong></td>
+              <td><strong></strong></td>
+              <td><strong></strong></td>
             </tr>
           </tfoot>
         </table>
@@ -45,6 +45,7 @@
             <label for="creditcard">Credit Card</label>
             <input type="text" class="form-control" id="creditcard" placeholder="Credit Card" />
           </div>
+          <a routerLink="/products">Retour au catalogue</a>
           <button class="btn btn-primary">Passer commande</button>
         </form>
 

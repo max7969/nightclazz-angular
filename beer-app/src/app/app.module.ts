@@ -9,6 +9,7 @@ import { BeerService } from './beer.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {BasketService} from "./basket.service";
 import { BasketComponent } from './basket/basket.component';
+import { AppRoutingModule } from './/app-routing.module';
 import { ProductsComponent } from './products/products.component';
 
 
@@ -22,7 +23,8 @@ import { ProductsComponent } from './products/products.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     BeerService,

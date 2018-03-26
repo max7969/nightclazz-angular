@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Beer} from "../beer";
+import {BasketService} from "../basket.service";
+import {BeerService} from "../beer.service";
 
 @Component({
   selector: 'app-menu',
@@ -9,13 +11,16 @@ import {Beer} from "../beer";
 export class MenuComponent implements OnInit {
 
   @Input()
-  basket: Beer[];
+  basket: Beer[] = [];
 
-  constructor() { }
 
+  constructor(private basketService: BasketService) {
+  }
 
   ngOnInit() {
+    this.basketService.getBasket().subscribe( basket => this.basket = basket);
   }
+
 
   calculerTotal(): number {
 

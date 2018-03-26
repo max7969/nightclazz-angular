@@ -11,14 +11,12 @@ export class BasketComponent implements OnInit {
 
   basket: Beer[] = [];
 
-  constructor(private basketService: BasketService) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    this.basketService.getBasket().subscribe( basket => this.basket = basket);
-    // TODO : calculer total panier
-    // TODO : faire la somme des éléments dupliqués
+
   }
 
   calculerTotal(): number {
