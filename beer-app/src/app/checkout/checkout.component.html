@@ -6,31 +6,6 @@
 
     <div class="col-md-12">
 
-      <div class="row">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Produit</th>
-              <th>Prix unitaire</th>
-              <th>Quantité</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let produit of basket">
-              <td>{{produit.label}}</td>
-              <td>{{produit.price | currency}}</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><strong>Total :</strong></td>
-              <td><strong>{{calculerTotal() | currency}}</strong></td>
-              <td><strong>{{basket.length}}</strong></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
       <div cass="row">
         <form>
           <div class="form-group">
