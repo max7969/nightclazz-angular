@@ -26,7 +26,12 @@ export class ProductsComponent implements OnInit {
   addBeerToBasket(beer: Beer) {
     this.basketService.updateBasket(beer)
       .subscribe(
-        basket => this.basket = basket,
+        basket => {
+          this.basket = basket;
+          this.beerService.fetchBeers().subscribe(
+            beers => this.beers = beers
+          )
+        },
         error => alert("On est a sec!")
       );
   }

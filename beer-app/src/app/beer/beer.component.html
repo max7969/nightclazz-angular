@@ -16,7 +16,8 @@
         <span class="glyphicon glyphicon-star"></span>
         <span class="glyphicon glyphicon-star-empty"></span>
       </p>
-      <button (click)="onAddBeer()" type="button" class="pull-right btn btn-primary" aria-label="Ajoutez au Panier">Ajouter</button>
+      <strong *ngIf="beer.stock == 0">Rupture de stock!</strong>
+      <button [disabled]="beer.stock == 0" (click)="onAddBeer()" type="button" class="pull-right btn btn-primary" aria-label="Ajoutez au Panier">Ajouter</button>
     </div>
   </div>
 </div>
