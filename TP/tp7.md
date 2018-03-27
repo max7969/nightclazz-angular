@@ -10,7 +10,7 @@ Avant toute chose, nous allons partir de la branche `step7` du repo git.
 Dans cette version, nous avons légèrement modifié la structure de l'application :
 * L'ancien composant `AppComponent` devient `ProductsComponent`
 * Un nouveau `AppComponent` a été crée qui ne contient plus que le footer pour le moment
-* Un nouveau composant a été crée : `BasketComponent`, pour afficher le contenu du panier
+* Un nouveau composant a été crée : `CheckoutComponent`, pour afficher le formulaire de commande
 * Il est normal que l'application n'affiche plus rien.
 
 
@@ -33,14 +33,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 Les routes vont spécifier a Angular quel composant afficher pour quelle URL.
 Un objet `Route` possède typiquement 2 éléments :
-* _path_ : l'url relative qui correspond a la route. ex : _basket_ pour l'url `localhost:4200/basket`
+* _path_ : l'url relative qui correspond a la route. ex : _checkout_ pour l'url `localhost:4200/checkout`
 * _component_ : le composant a afficher pour cette route.
 
 Créez un tableau de `Routes` juste avant la déclaration `@NgModule` comme ceci :
 ```javascript
 const routes: Routes = [
   { path: 'products', component: ProductsComponent }
-  { path: 'basket', component: BasketComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
 ];
 ```
@@ -68,12 +68,12 @@ __Récapitulatif__ : parce que ça fait beaucoup d'instructions d'un coup. Voici
 ```javascript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {BasketComponent} from "./basket/basket.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
 import {ProductsComponent} from "./products/products.component";
 
 const routes: Routes = [
 { path: 'products', component: ProductsComponent },
-{ path: 'basket', component: BasketComponent },
+{ path: 'checkout', component: CheckoutComponent },
 { path: '', redirectTo: '/products', pathMatch: 'full' },
 ];
 
