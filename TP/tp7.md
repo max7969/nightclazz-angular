@@ -10,7 +10,7 @@ Avant toute chose, nous allons partir de la branche `step7` du repo git.
 Dans cette version, nous avons légèrement modifié la structure de l'application :
 * L'ancien composant `AppComponent` devient `ProductsComponent`
 * Un nouveau `AppComponent` a été crée qui ne contient plus que le footer pour le moment
-* Un nouveau composant a été crée : `CheckoutComponent`, pour afficher le formulaire de commande
+* Un nouveau composant a été crée : `CheckoutComponent`, pour afficher le contenu du panier et le formulaire de commande
 * Il est normal que l'application n'affiche plus rien.
 
 
