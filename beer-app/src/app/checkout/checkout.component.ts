@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BasketService} from "../basket.service";
 import {Beer} from "../beer";
+import {Customer} from "./customer";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-checkout',
@@ -9,14 +11,29 @@ import {Beer} from "../beer";
 })
 export class CheckoutComponent implements OnInit{
 
-  basket: Beer[];
+  basket: Beer[] = [];
 
-  constructor(private basketService : BasketService) {
+  customer: Customer = {
+    name: '',
+    address: '',
+    creditCard: ''
+  };
+
+  constructor(private basketService : BasketService, private router: Router) {
 
   }
 
   ngOnInit() {
     this.basketService.getBasket().subscribe(basket => this.basket= basket);
+  }
+
+  validerCommande(){
+    this.basketService.validerCommande(this.customer).subscribe(
+      reponse => {
+        alert("Commande validée");
+        this.router.navigateByUrl('/products');
+      }
+    );
   }
 
 }

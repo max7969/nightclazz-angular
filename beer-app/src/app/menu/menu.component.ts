@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Beer} from "../beer";
 import {BasketService} from "../basket.service";
-import {BeerService} from "../beer.service";
 
 @Component({
   selector: 'app-menu',

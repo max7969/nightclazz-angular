@@ -11,6 +11,7 @@ import {BasketService} from "./basket.service";
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductsComponent } from './products/products.component';
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {CheckoutComponent} from "./checkout/checkout.component";
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     BeerService,
